@@ -1,0 +1,56 @@
+CC=gcc
+SRCS = \
+	byteorder.c \
+	crc.c \
+	hsieh_hash.c \
+	jenkins_hash.c \
+	md5.c \
+	memcached.c \
+	memcached_auto.c \
+	memcached_analyze.c \
+	memcached_behavior.c \
+	memcached_callback.c \
+	memcached_connect.c \
+	memcached_delete.c \
+	memcached_do.c \
+	memcached_fetch.c \
+	memcached_flush.c \
+	memcached_flush_buffers.c \
+	memcached_get.c \
+	memcached_hash.c \
+	memcached_hosts.c \
+	memcached_io.c \
+	memcached_key.c \
+	memcached_parse.c \
+	memcached_purge.c \
+	memcached_quit.c \
+	memcached_response.c \
+	memcached_result.c \
+	memcached_server.c \
+	memcached_stats.c \
+	memcached_storage.c \
+	memcached_strerror.c \
+	memcached_string.c \
+	memcached_verbosity.c \
+	memcached_version.c \
+	murmur_hash.c \
+	poll.c
+
+OBJS = $(SRCS:.c=.o)
+
+CFLAGS=-I.. -I. -g -Iwin32
+
+.SUFFIXES: .o .c
+
+all : memcached.dll memcached.a
+
+.c.o :
+	gcc -c $(CFLAGS) $<
+
+memcached.dll : $(OBJS)
+	gcc -Wl,-enable-stdcall-fixup -shared -o $@ $(OBJS) -lws2_32
+
+memcached.a : memcached.dll
+	echo EXPORTS > memcached.def
+	nm memcached.dll | grep ' T _' | grep 'memcached' | sed 's/.* T _//' >> memcached.def
+	dlltool --def memcached.def --dllname memcached.dll --output-lib memcached.a
