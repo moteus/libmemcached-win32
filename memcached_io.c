@@ -286,7 +286,7 @@ memcached_return memcached_io_close(memcached_server_st *ptr)
 #endif
   }
 
-#ifdef _WIN32
+#ifndef _WIN32
   r= close(ptr->fd);
 #else
   r= closesocket(ptr->fd);
