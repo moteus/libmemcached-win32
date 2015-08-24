@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{86D1A8E2-C20E-4482-A9DA-9EE4DA41EEE6}</ProjectGuid>
+    <RootNamespace>libmemcached</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>include;win32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WIN32_WINNT=0x0500;_DEBUG;_WINDOWS;_USRDLL;LIBMEMCACHED_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ModuleDefinitionFile>memcached.def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>include;win32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WIN32_WINNT=0x0500;NDEBUG;_WINDOWS;_USRDLL;LIBMEMCACHED_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ModuleDefinitionFile>memcached.def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="byteorder.c" />
+    <ClCompile Include="crc.c" />
+    <ClCompile Include="hsieh_hash.c" />
+    <ClCompile Include="jenkins_hash.c" />
+    <ClCompile Include="md5.c" />
+    <ClCompile Include="memcached.c" />
+    <ClCompile Include="memcached_analyze.c" />
+    <ClCompile Include="memcached_auto.c" />
+    <ClCompile Include="memcached_behavior.c" />
+    <ClCompile Include="memcached_callback.c" />
+    <ClCompile Include="memcached_connect.c" />
+    <ClCompile Include="memcached_delete.c" />
+    <ClCompile Include="memcached_do.c" />
+    <ClCompile Include="memcached_dump.c" />
+    <ClCompile Include="memcached_fetch.c" />
+    <ClCompile Include="memcached_flush.c" />
+    <ClCompile Include="memcached_flush_buffers.c" />
+    <ClCompile Include="memcached_get.c" />
+    <ClCompile Include="memcached_hash.c" />
+    <ClCompile Include="memcached_hosts.c" />
+    <ClCompile Include="memcached_io.c" />
+    <ClCompile Include="memcached_key.c" />
+    <ClCompile Include="memcached_parse.c" />
+    <ClCompile Include="memcached_purge.c" />
+    <ClCompile Include="memcached_quit.c" />
+    <ClCompile Include="memcached_response.c" />
+    <ClCompile Include="memcached_result.c" />
+    <ClCompile Include="memcached_server.c" />
+    <ClCompile Include="memcached_stats.c" />
+    <ClCompile Include="memcached_storage.c" />
+    <ClCompile Include="memcached_strerror.c" />
+    <ClCompile Include="memcached_string.c" />
+    <ClCompile Include="memcached_verbosity.c" />
+    <ClCompile Include="memcached_version.c" />
+    <ClCompile Include="murmur_hash.c" />
+    <ClCompile Include="poll.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="memcached.def" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="common.h" />
+    <ClInclude Include="libmemcached_probes.h" />
+    <ClInclude Include="memcached.h" />
+    <ClInclude Include="memcached_constants.h" />
+    <ClInclude Include="memcached_get.h" />
+    <ClInclude Include="memcached_io.h" />
+    <ClInclude Include="memcached_pool.h" />
+    <ClInclude Include="memcached_result.h" />
+    <ClInclude Include="memcached_server.h" />
+    <ClInclude Include="memcached_storage.h" />
+    <ClInclude Include="memcached_string.h" />
+    <ClInclude Include="memcached_types.h" />
+    <ClInclude Include="memcached_util.h" />
+    <ClInclude Include="memcached_watchpoint.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

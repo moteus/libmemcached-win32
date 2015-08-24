@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="byteorder.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="crc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="hsieh_hash.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jenkins_hash.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="md5.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="memcached.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="memcached_analyze.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="memcached_auto.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="memcached_behavior.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="memcached_callback.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="memcached_connect.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="memcached_delete.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="memcached_do.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="memcached_dump.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="memcached_fetch.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="memcached_flush.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="memcached_flush_buffers.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="memcached_get.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="memcached_hash.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="memcached_hosts.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="memcached_io.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="memcached_key.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="memcached_parse.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="memcached_purge.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="memcached_quit.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="memcached_response.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="memcached_result.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="memcached_server.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="memcached_stats.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="memcached_storage.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="memcached_strerror.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="memcached_string.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="memcached_verbosity.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="memcached_version.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="murmur_hash.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="poll.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="memcached.def">
+      <Filter>Source Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="common.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmemcached_probes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="memcached.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="memcached_constants.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="memcached_get.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="memcached_io.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="memcached_pool.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="memcached_result.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="memcached_server.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="memcached_storage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="memcached_string.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="memcached_types.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="memcached_util.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="memcached_watchpoint.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
