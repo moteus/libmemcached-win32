@@ -3,7 +3,7 @@
 */
 
 #include "common.h"
-#include "memcached_io.h"
+#include "libmemcached/memcached_io.h"
 #include <sys/select.h>
 #include <poll.h>
 
@@ -405,7 +405,7 @@ static ssize_t io_flush(memcached_server_st *ptr,
 #else
     sent_length= send(ptr->fd, local_write_ptr, write_length, 0);
     errno = WSAGetLastError();
-    if (errno == WSAENOTCONN) {
+    if ((errno == WSAENOTCONN)||(errno == WSAEWOULDBLOCK)) {
       errno = EAGAIN;
     }
 #endif

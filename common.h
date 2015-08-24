@@ -27,11 +27,21 @@
 #else
 #  include <ws2tcpip.h>
 #  include <errno.h>
-#  define EINPROGRESS WSAEINPROGRESS
-#  define EALREADY    WSAEALREADY
-#  define EISCONN     WSAEISCONN
-#  define ENOBUFS     WSAENOBUFS
-#  define SHUT_RDWR SD_BOTH
+#  ifndef EINPROGRESS
+#    define EINPROGRESS WSAEINPROGRESS
+#  endif
+#  ifndef EALREADY
+#    define EALREADY    WSAEALREADY
+#  endif
+#  ifndef EISCONN
+#    define EISCONN     WSAEISCONN
+#  endif
+#  ifndef ENOBUFS
+#    define ENOBUFS     WSAENOBUFS
+#  endif
+#  ifndef SHUT_RDWR
+#    define SHUT_RDWR SD_BOTH
+#  endif
 #  define srandom(x) srand(x)
 #  define random() rand()
 #  define index(s, c) strchr(s, c)

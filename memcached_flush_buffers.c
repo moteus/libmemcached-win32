@@ -1,5 +1,5 @@
 #include "common.h"
-#include "memcached_io.h"
+#include "libmemcached/memcached_io.h"
 
 memcached_return memcached_flush_buffers(memcached_st *mem)
 {
