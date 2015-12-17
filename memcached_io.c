@@ -49,7 +49,15 @@ static memcached_return io_wait(memcached_server_st *ptr,
   error= poll(fds, 1, ptr->root->poll_timeout);
 
   if (error == 1)
-    return MEMCACHED_SUCCESS;
+  {
+    if(fds[0].revents & flags)
+    {
+      return MEMCACHED_SUCCESS;
+    }
+    if(fds[0].revents & POLLERR){
+      error = -1;
+    }
+  }
   else if (error == 0)
   {
     return MEMCACHED_TIMEOUT;
