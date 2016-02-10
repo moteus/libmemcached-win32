@@ -13,7 +13,10 @@
 #define false 0
 
 #define bool _Bool
+
+#if defined(_MSC_VER) && (_MSC_VER < 1900)
 typedef int  _Bool;
+#endif
 
 #endif
 
